@@ -1,0 +1,19 @@
+<nav>
+    <div id="logo">
+        <%= image_tag "Finsz-logo-white-on-orange-500px.png" %>
+    </div>
+    <div id="account_options">
+        <% if user_signed_in? %>
+            <div id="user_signout">
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
+            </div>
+        <% else %>
+            <div id="create_acc">
+                <li><%= link_to "Create Account", new_user_registration_path %></li>
+            </div>
+            <div id="user_signin">
+                <li><%= link_to "Sign In", new_user_session_path %></li>
+            </div>
+        <% end %>
+     </div>
+</nav>
