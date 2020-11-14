@@ -58,3 +58,9 @@ gem 'devise'
 
 # Adds CanCanCan for user access control
 gem 'cancancan'
+
+# Adds Bootstrap for design stuffs
+gem 'bootstrap'
+
+# Adds jquery because Bootstrap needs it
+gem 'jquery-rails'
