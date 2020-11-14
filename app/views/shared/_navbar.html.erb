@@ -4,6 +4,9 @@
     </div>
     <div id="account_options">
         <% if user_signed_in? %>
+            <div id="user_edit">
+                <li><%= link_to "My Account", edit_user_registration_path, method: "get" %></li>
+            </div>
             <div id="user_signout">
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
             </div>
