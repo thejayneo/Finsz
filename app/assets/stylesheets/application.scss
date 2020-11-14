@@ -16,17 +16,17 @@
 @import "bootstrap";
 
 nav {
-    display: sticky;
     background-color: white ;
     height: 9vh;
+    position: -webkit-sticky;
     border-bottom: 1px;
     border-color: grey;
 
     .logo {
-        display: block;
+        display: inline-block;
         float: left;
-        padding: 1em;
-        width: 5vw;
+        padding: 1%;
+        width: 10vh;
     }   
 
     li {
@@ -38,6 +38,41 @@ nav {
     }
 
     a {
-        color: #ff914d;
+        color: #f1975b;
+    }
+}
+
+.splash_banner {
+    background-color: #f1975b;
+    height: 91vh;
+
+    .splash_logo {
+        margin: 5% 40%;
+        width: 20%;
+    }
+
+    h1, p {
+        color: white;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+    }
+
+    label {
+        color: white;
+    }
+
+    em {
+        color: white;
     }
 }

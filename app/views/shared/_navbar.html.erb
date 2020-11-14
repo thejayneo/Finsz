@@ -1,6 +1,10 @@
 <nav>
     <div id="logo">
-        <%= link_to image_tag("Finsz-logo-orange-on-white-500px.png", :class => "logo"), root_path %>
+        <% if user_signed_in? %>
+            <%= link_to image_tag("Finsz-logo-orange-on-white-500px.png", :class => "logo"), products_path %>
+        <% else %>
+            <%= link_to image_tag("Finsz-logo-orange-on-white-500px.png", :class => "logo"), root_path %>
+        <% end %>
     </div>
     <div id="account_options">
         <% if user_signed_in? %>
