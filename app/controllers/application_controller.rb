@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
             devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :display_name, :first_name, :last_name, :password, :password_confirmation) }
         end
 
-        def after_sing_in_path_for(user)
-            stored_location_for(user) || products_path
+        def after_sign_in_path_for(user)
+            products_path
+        end
+
+        def after_sign_out_path_for(user)
+            root_path
         end
 end
