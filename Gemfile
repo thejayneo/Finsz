@@ -64,3 +64,6 @@ gem 'bootstrap'
 
 # Adds jquery because Bootstrap needs it
 gem 'jquery-rails'
+
+# Adds AWS S3 for image storage
+gem "aws-sdk-s3", "~> 1.84"
