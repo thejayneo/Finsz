@@ -43,8 +43,6 @@ nav {
 }
 
 .splash_banner {
-    background-color: #f1975b;
-    height: 91vh;
 
     .splash_logo {
         margin: 5% 40%;
@@ -52,7 +50,6 @@ nav {
     }
 
     h1, p {
-        color: white;
         text-align: center;
     }
 
@@ -65,14 +62,13 @@ nav {
 
     h2 {
         text-align: center;
-        color: white;
     }
+}
 
-    label {
-        color: white;
-    }
+body {
+    background-color: #f1975b;
+}
 
-    em {
-        color: white;
-    }
+h1, h2, h3, p, label, em, i {
+    color: white;
 }

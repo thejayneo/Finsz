@@ -10,5 +10,11 @@
   <%= @product.price %>
 </p>
 
+<p>
+  <strong>Picture:</strong>
+</p>
+  <%= image_tag(@product.picture) if @product.picture.attached? %>
+
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
