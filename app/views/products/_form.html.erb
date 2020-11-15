@@ -16,11 +16,28 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="form_row">
+    <%= form.label :product_type %>
+    <br><%= form.radio_button :product_type, 'plans_only' %> Plans Only
+    <br><%= form.radio_button :product_type, 'kit_and_plans' %> Kit and Plans
+    <br><%= form.radio_button :product_type, 'assembled_module' %> Assembly Module
+  </div>
+
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
  
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
   <div class="field">
     <%= form.label :picture %>
     <%= form.file_field :picture, accept: 'image/png, image/PNG, image/jpg, image/jpeg' %>
