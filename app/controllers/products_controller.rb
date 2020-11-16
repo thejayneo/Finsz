@@ -12,6 +12,28 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      customer_email: current_user.email,
+      line_items: [{
+          name: @product.name, 
+          description: @product.description, 
+          amount: (@product.price * 100).to_i, 
+          currency: 'aud',
+          quantity: 1
+       }],
+       payment_intent_data: { 
+         metadata: { 
+           product_id: @product.id,
+           buyer_id: current_user.id,
+           seller_id: @product.seller_id
+          }
+        },
+        success_url: "#{root_url}payments/success?productId=#{@product.id}",
+        cancel_url: "#{root_url}products/#{@product.id}"
+    )
+
+    @session_id = session.id
   end
 
   # GET /products/new

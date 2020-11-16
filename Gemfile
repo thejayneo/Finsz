@@ -67,3 +67,6 @@ gem 'jquery-rails'
 
 # Adds AWS S3 for image storage
 gem "aws-sdk-s3", "~> 1.84"
+
+# Adds Stripe for payments
+gem "stripe"
