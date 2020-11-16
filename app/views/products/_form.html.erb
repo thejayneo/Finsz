@@ -20,7 +20,17 @@
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
- 
+
+    <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+    <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+<br>
   <div class="field">
     <%= form.label :picture %>
     <%= form.file_field :picture, accept: 'image/png, image/PNG, image/jpg, image/jpeg' %>
