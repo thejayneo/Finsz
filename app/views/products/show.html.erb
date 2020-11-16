@@ -20,7 +20,7 @@
 </p>
   <%= image_tag(@product.picture) if @product.picture.attached? %>
 
-<button data-stripe="payment">Buy ticket <%= number_to_currency(@product.price) %></button>
+<button data-stripe="payment">Purchase item: <%= number_to_currency(@product.price) %></button>
 <br>
 <%= link_to 'Back', products_path %>
 <script src="https://js.stripe.com/v3/"></script>

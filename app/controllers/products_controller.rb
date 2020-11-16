@@ -29,10 +29,9 @@ class ProductsController < ApplicationController
            seller_id: @product.seller_id
           }
         },
-        success_url: "#{root_url}payments/success?productId=#{@product.id}",
+        success_url: "#{root_url}products/",
         cancel_url: "#{root_url}products/#{@product.id}"
     )
-
     @session_id = session.id
   end
 
