@@ -50,7 +50,11 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    
+    p "******************"
+    p product_params
+    p "******************"
+
+
     @product = Product.new(product_params)
     @product.seller_id = current_user.id
 
