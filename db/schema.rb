@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_042200) do
+ActiveRecord::Schema.define(version: 2020_11_16_225622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,27 +37,23 @@ ActiveRecord::Schema.define(version: 2020_11_16_042200) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "product_name"
-    t.decimal "order_total"
-    t.bigint "seller_id_id", null: false
-    t.bigint "buyer_id_id", null: false
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "product_id_id", null: false
-    t.index ["buyer_id_id"], name: "index_orders_on_buyer_id_id"
-    t.index ["product_id_id"], name: "index_orders_on_product_id_id"
-    t.index ["seller_id_id"], name: "index_orders_on_seller_id_id"
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["seller_id"], name: "index_orders_on_seller_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "price", null: false
-    t.bigint "user_id", null: false
+    t.decimal "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "seller_id", null: false
     t.string "description", null: false
-    t.integer "quantity", null: false
     t.index ["seller_id"], name: "index_products_on_seller_id"
   end
 
@@ -81,8 +77,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_042200) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "orders", "products", column: "product_id_id"
-  add_foreign_key "orders", "users", column: "buyer_id_id"
-  add_foreign_key "orders", "users", column: "seller_id_id"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users", column: "buyer_id"
+  add_foreign_key "orders", "users", column: "seller_id"
   add_foreign_key "products", "users", column: "seller_id"
 end
