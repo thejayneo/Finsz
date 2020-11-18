@@ -12,6 +12,7 @@ class Ability
       else
         can :read, Product
         can :manage, Product, seller_id: user.id
+        can :read, Order
       end
     #
     # The first argument to `can` is the action you are giving the user

@@ -25,11 +25,13 @@ class ProductsController < ApplicationController
        payment_intent_data: { 
          metadata: { 
            product_id: @product.id,
+           product_name: @product.name,
+           product_price: @product.price,
            buyer_id: current_user.id,
            seller_id: @product.seller_id
           }
         },
-        success_url: "#{root_url}products/",
+        success_url: "#{root_url}payments/success?productId=#{@product.id}",
         cancel_url: "#{root_url}products/#{@product.id}"
     )
     @session_id = session.id
@@ -48,7 +50,11 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    
+    p "******************"
+    p product_params
+    p "******************"
+
+
     @product = Product.new(product_params)
     @product.seller_id = current_user.id
 
