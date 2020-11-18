@@ -18,27 +18,35 @@
 nav {
     background-color: white ;
     height: 9vh;
+    width: 100%;
     position: -webkit-sticky;
     border-bottom: 1px;
     border-color: grey;
 
     .logo {
-        display: inline-block;
+        // display: block;
         // float: left;
         padding: 1%;
         width: 10vh;
     }   
 
+    .account_options {
+        float: right;
+    }
+
+    ul {
+        position: fixed;
+        display: flex;
+    }
+
     li {
-        display: block;
         padding: 1.6em;
         list-style-type: none;
         float: right;
-        top: 50%;
     }
 
     a {
-        color: #f1975b;
+        color: white;
     }
 }
 
