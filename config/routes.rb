@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
 
-  # get '*path', to: redirect('/'), constraints: lambda { |req|
-  #   req.path.exclude? 'rails/active_storage'
-  # }
+  get '*path', to: redirect('/products'), constraints: lambda { |req|
+      req.path.exclude? 'rails/active_storage'
+    }
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get '/user' => "products#index", :as => :user_root
 

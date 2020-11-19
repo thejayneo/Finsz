@@ -80,3 +80,13 @@ body {
 h1, h2, h3, p, label, em, i {
     color: white;
 }
+
+h3 {
+    text-align: center;
+}
+
+.user_form {
+    display: flex;
+    flex-direction: column;
+
+}

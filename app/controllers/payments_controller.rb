@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
 
         product_id = payment.metadata.product_id
         buyer_id = payment.metadata.buyer_id
-        seller_id = payment.metadata.buyer_id
+        seller_id = payment.metadata.seller_id
         product_name = payment.metadata.product_name
         product_price = payment.metadata.product_price
         
