@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :seller_id
-  belongs_to :buyer_id
-  belongs_to :product_id
+  belongs_to :seller, class_name: 'User'
+  belongs_to :buyer, class_name: 'User'
+  belongs_to :product
 end

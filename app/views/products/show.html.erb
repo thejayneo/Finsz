@@ -20,6 +20,7 @@
 </p>
   <%= image_tag(@product.picture) if @product.picture.attached? %>
 
+<br>
 <button data-stripe="payment">Purchase item: <%= number_to_currency(@product.price) %></button>
 <br>
 <%= link_to 'Back', products_path %>

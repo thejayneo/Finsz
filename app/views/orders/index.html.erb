@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1>My Purchases</h1>
 
 <table>
   <thead>
@@ -20,18 +20,16 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.id %></td>
-        <td><%= order.seller_id %></td>
-        <td><%= order.buyer_id %></td>
+        <td><%= order.seller.display_name %></td>
+        <%# Skip one layer of lookup by accessing via session. %>
+        <td><%= current_user.display_name %></td>
         <td><%= order.product_id %></td>
         <td><%= order.product_name %></td>
-        <td><%= order.price %></td>
+        <td><%= order.product_price %></td>
         <td><%= order.created_at %></td>
-        <td><%= link_to 'Show', order %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Order', new_order_path %>
